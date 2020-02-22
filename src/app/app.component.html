@@ -1,0 +1,27 @@
+
+
+<h1>Dependent Dropdown Task</h1>
+
+<div id="dropDownWrapper">
+  <div class="dropDownContainer">
+    <h4>Year</h4>
+      <select (change)="fnSelectedYear($event)" >
+        <option value="">Select Year</option>
+        <option *ngFor="let year of newYearArr" value="{{year}}">{{year}}</option>
+      </select>
+  </div>
+  <div class="dropDownContainer">
+      <h4>Make</h4>
+        <select [disabled]="IsMake" (change)="fnSelectedMake($event)">
+          <option>Select Make</option>
+          <option *ngFor="let make of newMakeArr" value="{{make}}">{{make}}</option>
+        </select>
+    </div>
+    <div class="dropDownContainer">
+        <h4>Model</h4>
+          <select [disabled] = "IsModel" (change)="fnSelectedModel($event)">
+            <option>Select Model</option>
+            <option *ngFor="let model of arrModel" value="{{model}}">{{model}}</option>
+          </select>
+      </div>
+</div>
