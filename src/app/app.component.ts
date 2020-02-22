@@ -75,7 +75,6 @@ export class AppComponent {
     console.log(selectedModel, 'selectedModel');
     }
     onSubmit() {
-      console.warn(this.dropdownForm.value);
       alert(
         "You selected values are: \nYear: "+ this.dropdownForm.value.year+
         "\n make: "+this.dropdownForm.value.make +" \n Model: "+this.dropdownForm.value.model
