@@ -1,27 +1,31 @@
 
 
 <h1>Dependent Dropdown Task</h1>
-
+<form [formGroup]="dropdownForm" (ngSubmit)="onSubmit()">
 <div id="dropDownWrapper">
   <div class="dropDownContainer">
     <h4>Year</h4>
-      <select (change)="fnSelectedYear($event)" >
+      <select (change)="fnSelectedYear($event)" formControlName="year">
         <option value="">Select Year</option>
         <option *ngFor="let year of newYearArr" value="{{year}}">{{year}}</option>
       </select>
   </div>
   <div class="dropDownContainer">
       <h4>Make</h4>
-        <select [disabled]="IsMake" (change)="fnSelectedMake($event)">
-          <option>Select Make</option>
+        <select (change)="fnSelectedMake($event)" formControlName="make">
+          <option value="">Select Make</option>
           <option *ngFor="let make of newMakeArr" value="{{make}}">{{make}}</option>
         </select>
     </div>
     <div class="dropDownContainer">
         <h4>Model</h4>
-          <select [disabled] = "IsModel" (change)="fnSelectedModel($event)">
-            <option>Select Model</option>
+          <select (change)="fnSelectedModel($event)" formControlName="model">
+            <option value="">Select Model</option>
             <option *ngFor="let model of arrModel" value="{{model}}">{{model}}</option>
           </select>
       </div>
+      <div>
+        <button class="btn" [ngClass]="{btnEnable:dropdownForm.valid,btnDisable:!dropdownForm.valid}" [disabled]=!dropdownForm.valid>Submit</button>
+      </div>
 </div>
+</form>

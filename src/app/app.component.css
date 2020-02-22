@@ -27,3 +27,24 @@ h1{
     height: 3em;
     border: 1px solid;
 }
+.btn{
+    position: relative;
+    margin: 5rem auto;
+    display: block;
+    border: 1px solid #ccc;
+    padding: 8px 20px;
+}
+.btn.btnDisable{
+    background: rgb(241, 241, 241);
+    color: #ccc;
+}
+.btn.btnEnable{
+    background: rgb(6, 109, 148);
+    color: #fff;
+    outline: none;
+}
+.btn.btnEnable:hover{
+    cursor: pointer;
+    box-shadow: 2px 2px 2px #ccc;
+    transition: 0.5s;
+}
